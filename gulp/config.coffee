@@ -1,5 +1,5 @@
 dest = "./bundle"
-src  = './src'
+src = './src'
 
 _ = require 'lodash-node'
 fs = require 'fs'
@@ -10,12 +10,12 @@ multipleBundles = []
 _(list).each (file) ->
 
   _file = file.split('.')
-  _file[_file.length-1] = 'js'
+  _file[_file.length - 1] = 'js'
 
   multipleBundles.push {
-    dest:dest
-    entries:"#{src}/entries/#{file}"
-    outputName:_file.join('.')
+    dest: dest
+    entries: "#{src}/entries/#{file}"
+    outputName: _file.join('.')
   }
 
 module.exports =
@@ -35,10 +35,12 @@ module.exports =
     root: dest
 
   browserify:
+    # enable full-paths
+    fullPaths: no
     # // Enable source maps
     debug: false
     # // Additional file extentions to make optional
     extensions: ['.coffee', '.cjsx', '.jsx', '.js']
     # // A separate bundle will be generated for each
     # // bundle config in the list below
-    bundleConfigs:multipleBundles
+    bundleConfigs: multipleBundles

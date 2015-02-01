@@ -1,5 +1,4 @@
 require('es5-shim');
-require('../node_modules/bootstrap/dist/js/bootstrap.min.js');
 var $ = require('jQuery');
 
 $(function() {
@@ -11,9 +10,9 @@ $(function() {
     var data = form.serialize();
 
     new Request({
-      callbackName: 'login',
-      noSuccessMsg: true
-    })
+        callbackName: 'login',
+        noSuccessMsg: true
+      })
       .run({
         "url": "assets/components/modxsite/connectors/connector.php",
         data: data,

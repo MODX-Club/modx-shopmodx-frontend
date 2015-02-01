@@ -26,7 +26,7 @@ gulp.task('browserify', function(callback) {
       // Required watchify args
       cache: {},
       packageCache: {},
-      fullPaths: true,
+      fullPaths: config.fullPaths,
       // Specify the entry point of your app
       entries: bundleConfig.entries,
       // Add file extentions to make optional in your requires
@@ -63,20 +63,19 @@ gulp.task('browserify', function(callback) {
         // Report compile errors
         .on('error', handleErrors)
 
-        // Use vinyl-source-stream to make the
-        // stream gulp compatible. Specifiy the
-        // desired output filename here.
-        .pipe(source(bundleConfig.outputName))
+      // Use vinyl-source-stream to make the
+      // stream gulp compatible. Specifiy the
+      // desired output filename here.
+      .pipe(source(bundleConfig.outputName))
         .pipe(plugins.jshint())
         .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
         .pipe(plugins.uglifyjs(
           bundleConfig.outputName,
           uglifyConfig
-          )
-        ) // now gulp-uglify works
+        )) // now gulp-uglify works
 
-        // Specify the output destination
-        .pipe(gulp.dest(bundleConfig.dest))
+      // Specify the output destination
+      .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished);
     };
 
