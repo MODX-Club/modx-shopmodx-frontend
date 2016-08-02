@@ -1,2 +1,7 @@
-node_modules
-bundle
+/node_modules
+!/node_modules/bootstrap
+!/node_modules/alertifyjs
+
+npm-debug.log
+/bundle/*.hot-reload.json
+/bundle/**
