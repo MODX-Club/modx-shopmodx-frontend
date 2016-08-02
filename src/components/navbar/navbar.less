@@ -1,0 +1,32 @@
+@import (reference) '../../styles/less/theme.less';
+
+@import (reference) '~bootstrap/less/mixins.less';
+@import (reference) '~bootstrap/less/utilities.less';
+@import (reference) '~bootstrap/less/forms.less';
+@import (reference) '~bootstrap/less/navbar.less';
+
+.navbar-nav{
+    
+    @media(max-width: @screen-sm-min) {
+        .dropdown-menu {
+            // display: none!important;
+            opacity: 0;
+            height:0;
+            overflow:hidden;
+        }
+    }
+    
+    a{
+        padding: 7px 0 !important;
+        margin:0 10px;
+    }
+    li > a:hover {background-color:transparent;}
+    li > a:focus {background-color:transparent;outline:none;}
+    li:hover, li:focus{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: #eeeeee;
+        // background: -webkit-linear-gradient(top, #808080 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    }
+    
+}

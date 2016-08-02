@@ -1,0 +1,43 @@
+@import (reference) '~bootstrap/less/variables.less';
+@import (reference) '~bootstrap/less/mixins.less';
+@import (reference) '~bootstrap/less/utilities.less';
+@import (reference) '~bootstrap/less/navs.less';
+
+.tabs
+{
+    .tabs__list:extend(.clearfix all,.nav all,.nav-tabs all)
+    {
+        border: none;
+
+        .tabs__item.tabs__item
+        {
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            & + .tabs__item
+            {
+                margin-left: 10px;
+            }
+
+            a
+            {
+                border: none;
+                background: none;
+
+                &:hover,
+                &.active,
+                &:focus
+                {
+                    border: inherit;
+                    background: none;
+                }
+            }
+        }
+    }
+
+    .tabs__content:extend(.tab-content all)
+    {
+        padding-top: 22px;
+    }
+}
