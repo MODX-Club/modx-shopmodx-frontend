@@ -8,7 +8,7 @@ export default function handleCallback(callback, responseData, requestData) {
 
     hasErrors = callback(responseData);
 
-  } else if (requestData && requestData.action && cb[requestData.action]) {
+  } else if (requestData && requestData.action &&cb && cb[requestData.action]) {
 
     let globalCallback = cb[requestData.action][responseData.success ? 'success' : 'failure'];
     if (isFunction(globalCallback)) {
