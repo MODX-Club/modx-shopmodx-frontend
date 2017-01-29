@@ -18,6 +18,7 @@
     "imports-loader": "^0.6.4",
     "install": "~0.4.4",
     "jquery.stellar": "^0.6.2",
+    "less": "^2.7.2",
     "less-loader": "^2.2.0",
     "npm": "~3.7.2",
     "path": "^0.12.7",
